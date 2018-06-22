@@ -90,9 +90,10 @@ public class CCArticle {
     public let words: Int
     public let similarArticles: [CCSimliarArticle]
     public let coins: [CCCoin]
+    public let publishedAt: Date
     
     
-    init(data: NSObject) {
+    public init(data: NSObject) {
         self._id = data.value(forKey: "_id") as! String
         self.title = data.value(forKey: "title") as! String
         self.description = data.value(forKey: "description") as! String
@@ -117,6 +118,11 @@ public class CCArticle {
             similarArticles.append(CCSimliarArticle(data: rawSimilarArticle))
         }
         self.similarArticles = similarArticles
+        
+        let dateFor: DateFormatter = DateFormatter()
+        dateFor.dateFormat = "yyyy-MM-dd'T'HH:mm:ss"
+        let dateString = data.value(forKey: "publishedAt") as! String
+        self.publishedAt = dateFor.date(from: dateString)!
     }
 }
 
@@ -125,12 +131,17 @@ public class CCSimliarArticle {
     public let title: String
     public let _id: String
     public let url: String
-//    let publisedAt: Date
+    public let publishedAt: Date
     
-    init(data: NSObject) {
+    public init(data: NSObject) {
         self.title = data.value(forKey: "title") as! String
         self._id = data.value(forKey: "_id") as! String
         self.url = data.value(forKey: "url") as! String
+        
+        let dateFor: DateFormatter = DateFormatter()
+        dateFor.dateFormat = "yyyy-MM-dd'T'HH:mm:ss"
+        let dateString = data.value(forKey: "publishedAt") as! String
+        self.publishedAt = dateFor.date(from: dateString)!
     }
 }
 
@@ -141,7 +152,7 @@ public class CCCoin {
     public let slug: String
     public let tradingSymbol: String
     
-    init(data: NSObject) {
+    public init(data: NSObject) {
         self.name = data.value(forKey: "name") as! String
         self._id = data.value(forKey: "_id") as! String
         self.slug = data.value(forKey: "slug") as! String
