@@ -8,7 +8,7 @@
 
 Pod::Spec.new do |s|
   s.name             = 'CryptoNewsApi'
-  s.version          = '1.1.0'
+  s.version          = '1.1.1'
   s.summary          = 'Crypto News API. Official iOS client for the CryptoControl API'
 
   s.description      = <<-DESC
@@ -24,7 +24,4 @@ Official iOS client for the CryptoControl.io API. The CryptoControl iOS API/clie
   s.ios.deployment_target = '8.0'
   s.source_files = 'CryptoNewsApi/Classes/**/*'
   s.swift_version = '3.2'
-  # s.public_header_files = 'Pod/Classes/**/*.h'
-  # s.frameworks = 'UIKit', 'MapKit'
-  # s.dependency 'Alamofire', '~> 4.7'
 end
