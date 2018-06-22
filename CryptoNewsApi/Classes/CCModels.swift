@@ -163,7 +163,7 @@ public class CCCoin {
 
 public class CCRedditItem {
     public let _id: String
-    public let isSelf: String
+    public let isSelf: Bool
     public let score: Double
     public let comments: Int
     public let upvotes: Int
@@ -176,7 +176,7 @@ public class CCRedditItem {
     public let url: String
     
     public init(data: NSObject) {
-        self.isSelf = data.value(forKey: "isSelf") as! String
+        self.isSelf = data.value(forKey: "isSelf") as! Bool
         self._id = data.value(forKey: "_id") as! String
         self.description = data.value(forKey: "description") as! String
         self.id = data.value(forKey: "id") as! String
@@ -220,7 +220,7 @@ public class CCTweet {
         self.username = data.value(forKey: "username") as! String
         self.isRetweeted = data.value(forKey: "isRetweeted") as! Bool
         self.retweetCount = data.value(forKey: "retweetCount") as! Int
-        self.favouriteCount = data.value(forKey: "favouriteCount") as! Int
+        self.favouriteCount = data.value(forKey: "favoriteCount") as! Int
         
         let dateFormatter: DateFormatter = DateFormatter()
         dateFormatter.dateFormat = "yyyy-MM-dd'T'HH:mm:ss.SSSZ"
@@ -231,6 +231,36 @@ public class CCTweet {
         self.mentions = data.value(forKey: "mentions") as! [String]
         self.hashtags = data.value(forKey: "hashtags") as! [String]
         self.symbols = data.value(forKey: "symbols") as! [String]
+    }
+}
+
+
+public class CCFeed {
+    public let type: String
+    public let tweet: CCTweet?
+    public let reddit: CCRedditItem?
+    public let article: CCArticle?
+    
+    public init(data: NSObject) {
+        self.type = data.value(forKey: "type") as! String
+        
+        if (data.value(forKey: "tweet") != nil) {
+            self.tweet = CCTweet(data: data.value(forKey: "tweet") as! NSObject)
+        } else {
+            self.tweet = nil
+        }
+        
+        if (data.value(forKey: "reddit") != nil) {
+            self.reddit = CCRedditItem(data: data.value(forKey: "reddit") as! NSObject)
+        } else {
+            self.reddit = nil
+        }
+        
+        if (data.value(forKey: "article") != nil) {
+            self.article = CCArticle(data: data.value(forKey: "article") as! NSObject)
+        } else {
+            self.article = nil
+        }
     }
 }
 

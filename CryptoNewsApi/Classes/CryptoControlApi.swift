@@ -161,32 +161,116 @@ public class CryptoControlApi  {
     }
     
     
-    //    public func  getTopRedditPostsByCoin () {
-    //
-    //    }
-    //
-    //
-    //    public func  getLatestRedditPostsByCoin () {
-    //
-    //    }
-    //
-    //
-    //    public func  getTopTweetsByCoin () {
-    //
-    //    }
-    //
-    //
-    //    public func  getLatestTweetsByCoin () {
-    //
-    //    }
-    //
-    //
-    //    public func  getTopFeedByCoin () {
-    //
-    //    }
-    //
-    //
-    //    public func  getLatestFeedByCoin () {
-    //
-    //    }
+    public func  getTopRedditPostsByCoin (coin: String, completion: @escaping (_ error: CCErrors?, _ redditItems: [CCRedditItem]?) -> Void) {
+        self._fetch(path: "/reddit/coin/\(coin)") { (error, json) in
+            if (error != nil) {
+                completion(error, nil)
+                return
+            }
+            
+            let itemsJson = json as! [NSObject]
+            
+            var items: [CCRedditItem] = []
+            for itemsJson in itemsJson {
+                items.append(CCRedditItem(data: itemsJson))
+            }
+            
+            completion(nil, items)
+        }
+    }
+
+
+    public func  getLatestRedditPostsByCoin  (coin: String, completion: @escaping (_ error: CCErrors?, _ redditItems: [CCRedditItem]?) -> Void) {
+        self._fetch(path: "/reddit/coin/\(coin)?latest-true") { (error, json) in
+            if (error != nil) {
+                completion(error, nil)
+                return
+            }
+            
+            let itemsJson = json as! [NSObject]
+            
+            var items: [CCRedditItem] = []
+            for itemsJson in itemsJson {
+                items.append(CCRedditItem(data: itemsJson))
+            }
+            
+            completion(nil, items)
+        }
+    }
+
+
+    public func  getTopTweetsByCoin (coin: String, completion: @escaping (_ error: CCErrors?, _ tweets: [CCTweet]?) -> Void) {
+        self._fetch(path: "/tweets/coin/\(coin)") { (error, json) in
+            if (error != nil) {
+                completion(error, nil)
+                return
+            }
+            
+            let itemsJson = json as! [NSObject]
+            
+            var items: [CCTweet] = []
+            for itemsJson in itemsJson {
+                items.append(CCTweet(data: itemsJson))
+            }
+            
+            completion(nil, items)
+        }
+    }
+
+
+    public func  getLatestTweetsByCoin (coin: String, completion: @escaping (_ error: CCErrors?, _ tweets: [CCTweet]?) -> Void) {
+        self._fetch(path: "/tweets/coin/\(coin)?latest=true") { (error, json) in
+            if (error != nil) {
+                completion(error, nil)
+                return
+            }
+            
+            let itemsJson = json as! [NSObject]
+            
+            var items: [CCTweet] = []
+            for itemsJson in itemsJson {
+                items.append(CCTweet(data: itemsJson))
+            }
+            
+            completion(nil, items)
+        }
+    }
+
+
+    public func  getTopFeedByCoin (coin: String, completion: @escaping (_ error: CCErrors?, _ tweets: [CCFeed]?) -> Void) {
+        self._fetch(path: "/feed/coin/\(coin)") { (error, json) in
+            if (error != nil) {
+                completion(error, nil)
+                return
+            }
+            
+            let itemsJson = json as! [NSObject]
+            
+            var items: [CCFeed] = []
+            for itemsJson in itemsJson {
+                items.append(CCFeed(data: itemsJson))
+            }
+            
+            completion(nil, items)
+        }
+    }
+
+
+    public func  getLatestFeedByCoin (coin: String, completion: @escaping (_ error: CCErrors?, _ tweets: [CCFeed]?) -> Void) {
+        self._fetch(path: "/feed/coin/\(coin)?latest=true") { (error, json) in
+            if (error != nil) {
+                completion(error, nil)
+                return
+            }
+            
+            let itemsJson = json as! [NSObject]
+            
+            var items: [CCFeed] = []
+            for itemsJson in itemsJson {
+                items.append(CCFeed(data: itemsJson))
+            }
+            
+            completion(nil, items)
+        }
+    }
 }
