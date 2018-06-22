@@ -2,13 +2,13 @@ import Foundation
 
 
 public class CCCategories {
-    let analysis: [CCArticle]
-    let blockchain: [CCArticle]
-    let exchanges: [CCArticle]
-    let general: [CCArticle]
-    let government: [CCArticle]
-    let ico: [CCArticle]
-    let mining: [CCArticle]
+    public let analysis: [CCArticle]
+    public let blockchain: [CCArticle]
+    public let exchanges: [CCArticle]
+    public let general: [CCArticle]
+    public let government: [CCArticle]
+    public let ico: [CCArticle]
+    public let mining: [CCArticle]
     
     
     private func getObjectAsArticles (data: NSObject, key: String) -> [CCArticle] {
@@ -22,7 +22,7 @@ public class CCCategories {
     }
     
     
-    init(data: NSObject) {
+    public init(data: NSObject) {
         var analysis: [CCArticle] = []
         var blockchain: [CCArticle] = []
         var exchanges: [CCArticle] = []
@@ -78,18 +78,18 @@ public class CCCategories {
 
 
 public class CCArticle {
-    let _id: String
-    let url: String
-    let thumbnail: String?
-    let originalImageUrl: String?
-    let title: String
-    let description: String
-    let hotness: Double
-    let activityHotness: Double
-    let primaryCategory: String
-    let words: Int
-    let similarArticles: [CCSimliarArticle]
-    let coins: [CCCoin]
+    public let _id: String
+    public let url: String
+    public let thumbnail: String?
+    public let originalImageUrl: String?
+    public let title: String
+    public let description: String
+    public let hotness: Double
+    public let activityHotness: Double
+    public let primaryCategory: String
+    public let words: Int
+    public let similarArticles: [CCSimliarArticle]
+    public let coins: [CCCoin]
     
     
     init(data: NSObject) {
@@ -122,9 +122,9 @@ public class CCArticle {
 
 
 public class CCSimliarArticle {
-    let title: String
-    let _id: String
-    let url: String
+    public let title: String
+    public let _id: String
+    public let url: String
 //    let publisedAt: Date
     
     init(data: NSObject) {
@@ -136,10 +136,10 @@ public class CCSimliarArticle {
 
 
 public class CCCoin {
-    let _id: String
-    let name: String
-    let slug: String
-    let tradingSymbol: String
+    public let _id: String
+    public let name: String
+    public let slug: String
+    public let tradingSymbol: String
     
     init(data: NSObject) {
         self.name = data.value(forKey: "name") as! String
