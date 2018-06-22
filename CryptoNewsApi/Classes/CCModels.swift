@@ -119,10 +119,10 @@ public class CCArticle {
         }
         self.similarArticles = similarArticles
         
-        let dateFor: DateFormatter = DateFormatter()
-        dateFor.dateFormat = "yyyy-MM-dd'T'HH:mm:ss"
+        let dateFormatter: DateFormatter = DateFormatter()
+        dateFormatter.dateFormat = "yyyy-MM-dd'T'HH:mm:ss.SSSZ"
         let dateString = data.value(forKey: "publishedAt") as! String
-        self.publishedAt = dateFor.date(from: dateString)!
+        self.publishedAt = dateFormatter.date(from: dateString)!
     }
 }
 
@@ -138,10 +138,10 @@ public class CCSimliarArticle {
         self._id = data.value(forKey: "_id") as! String
         self.url = data.value(forKey: "url") as! String
         
-        let dateFor: DateFormatter = DateFormatter()
-        dateFor.dateFormat = "yyyy-MM-dd'T'HH:mm:ss"
+        let dateFormatter: DateFormatter = DateFormatter()
+        dateFormatter.dateFormat = "yyyy-MM-dd'T'HH:mm:ss.SSSZ"
         let dateString = data.value(forKey: "publishedAt") as! String
-        self.publishedAt = dateFor.date(from: dateString)!
+        self.publishedAt = dateFormatter.date(from: dateString)!
     }
 }
 
