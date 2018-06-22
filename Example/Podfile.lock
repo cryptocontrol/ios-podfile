@@ -1,0 +1,27 @@
+PODS:
+  - CryptoNewsApi (0.1.0)
+  - Nimble (7.0.3)
+  - Quick (1.2.0)
+
+DEPENDENCIES:
+  - CryptoNewsApi (from `../`)
+  - Nimble (~> 7.0.2)
+  - Quick (~> 1.2.0)
+
+SPEC REPOS:
+  https://github.com/cocoapods/specs.git:
+    - Nimble
+    - Quick
+
+EXTERNAL SOURCES:
+  CryptoNewsApi:
+    :path: "../"
+
+SPEC CHECKSUMS:
+  CryptoNewsApi: 322d7836887af98320abd68977248f28df6b31c4
+  Nimble: 7f5a9c447a33002645a071bddafbfb24ea70e0ac
+  Quick: 58d203b1c5e27fff7229c4c1ae445ad7069a7a08
+
+PODFILE CHECKSUM: 7ed6d48693604d2fe1aa7b93e931fe13185c44ac
+
+COCOAPODS: 1.5.3
