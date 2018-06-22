@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import CryptoNewsApi
 
 
 class ViewController: UIViewController {
