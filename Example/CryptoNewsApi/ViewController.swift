@@ -1,3 +1,4 @@
+
 //
 //  ViewController.swift
 //  CryptoNewsApi
@@ -13,11 +14,19 @@ import CryptoNewsApi
 class ViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view, typically from a nib.
-    }
-
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
+        
+        let api = CryptoControlApi(apiKey: "API_KEY_HERE")
+        
+        api.getTopNews { (error, articles) in
+            if (error == CCErrors.invalidAPIKey) {
+                print("bad api key")
+            }
+            
+            print(articles?.count)
+        }
+        
+        api.getTopNewsByCategory { (error, categories) in
+            print(categories?.analysis.count)
+        }
     }
 }
