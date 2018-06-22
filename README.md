@@ -1,4 +1,4 @@
-iOS Client - CryptoCryptol Crypto News Api
+iOS Client - CryptoControl Crypto News Api
 ===========================================
 
 Official iOS client for the [CryptoControl.io](https://cryptocontrol.io) API. The CryptoControl iOS client lets developers access rich formatted articles from cryptonews sources from all around the world.

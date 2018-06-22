@@ -9,7 +9,7 @@
 Pod::Spec.new do |s|
   s.name             = 'CryptoNewsApi'
   s.version          = '1.1.0'
-  s.summary          = 'Official iOS client for the CryptoControl API'
+  s.summary          = 'Crypto News API. Official iOS client for the CryptoControl API'
 
   s.description      = <<-DESC
 Official iOS client for the CryptoControl.io API. The CryptoControl iOS API/client lets developers access rich formatted articles from crypto news sources from all around the world. This crypto news api is free to use.
