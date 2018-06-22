@@ -14,7 +14,7 @@ public class CryptoControlApi  {
     let userAgent: String = "CryptoControl Java API v1.1.0"
     
     
-    init(apiKey: String) {
+    public init(apiKey: String) {
         self.apiKey = apiKey
     }
     
