@@ -159,3 +159,78 @@ public class CCCoin {
         self.tradingSymbol = data.value(forKey: "tradingSymbol") as! String
     }
 }
+
+
+public class CCRedditItem {
+    public let _id: String
+    public let isSelf: String
+    public let score: Double
+    public let comments: Int
+    public let upvotes: Int
+    public let downvotes: Int
+    public let description: String
+    public let id: String
+    public let publishedAt: Date
+    public let subreddit: String
+    public let title: String
+    public let url: String
+    
+    public init(data: NSObject) {
+        self.isSelf = data.value(forKey: "isSelf") as! String
+        self._id = data.value(forKey: "_id") as! String
+        self.description = data.value(forKey: "description") as! String
+        self.id = data.value(forKey: "id") as! String
+        self.subreddit = data.value(forKey: "subreddit") as! String
+        self.title = data.value(forKey: "title") as! String
+        self.url = data.value(forKey: "url") as! String
+        self.upvotes = data.value(forKey: "upvotes") as! Int
+        self.score = data.value(forKey: "score") as! Double
+        self.comments = data.value(forKey: "comments") as! Int
+        self.downvotes = data.value(forKey: "downvotes") as! Int
+        
+        let dateFormatter: DateFormatter = DateFormatter()
+        dateFormatter.dateFormat = "yyyy-MM-dd'T'HH:mm:ss.SSSZ"
+        let dateString = data.value(forKey: "publishedAt") as! String
+        self.publishedAt = dateFormatter.date(from: dateString)!
+    }
+}
+
+
+
+public class CCTweet {
+    public let _id: String
+    public let text: String
+    public let username: String
+    public let id: String
+    public let publishedAt: Date
+    public let isRetweeted: Bool
+    public let retweetCount: Int
+    public let favouriteCount: Int
+    
+    public let links: [String]
+    public let hashtags: [String]
+    public let mentions: [String]
+    public let symbols: [String]
+    
+    
+    public init(data: NSObject) {
+        self._id = data.value(forKey: "_id") as! String
+        self.text = data.value(forKey: "text") as! String
+        self.id = data.value(forKey: "id") as! String
+        self.username = data.value(forKey: "username") as! String
+        self.isRetweeted = data.value(forKey: "isRetweeted") as! Bool
+        self.retweetCount = data.value(forKey: "retweetCount") as! Int
+        self.favouriteCount = data.value(forKey: "favouriteCount") as! Int
+        
+        let dateFormatter: DateFormatter = DateFormatter()
+        dateFormatter.dateFormat = "yyyy-MM-dd'T'HH:mm:ss.SSSZ"
+        let dateString = data.value(forKey: "publishedAt") as! String
+        self.publishedAt = dateFormatter.date(from: dateString)!
+        
+        self.links = data.value(forKey: "links") as! [String]
+        self.mentions = data.value(forKey: "mentions") as! [String]
+        self.hashtags = data.value(forKey: "hashtags") as! [String]
+        self.symbols = data.value(forKey: "symbols") as! [String]
+    }
+}
+
