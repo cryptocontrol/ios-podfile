@@ -8,7 +8,7 @@
 
 Pod::Spec.new do |s|
   s.name             = 'CryptoNewsApi'
-  s.version          = '0.1.0'
+  s.version          = '1.0.0'
   s.summary          = 'Official iOS client for the CryptoControl API'
 
   s.description      = <<-DESC
