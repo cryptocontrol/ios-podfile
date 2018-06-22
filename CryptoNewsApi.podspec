@@ -22,9 +22,8 @@ Official iOS client for the CryptoControl.io API. The CryptoControl iOS API/clie
   s.social_media_url = 'https://twitter.com/cryptocontrolio'
 
   s.ios.deployment_target = '8.0'
-
   s.source_files = 'CryptoNewsApi/Classes/**/*'
-
+  s.swift_version = '3.2'
   # s.public_header_files = 'Pod/Classes/**/*.h'
   # s.frameworks = 'UIKit', 'MapKit'
   # s.dependency 'Alamofire', '~> 4.7'
