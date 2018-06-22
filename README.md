@@ -15,21 +15,32 @@ pod install CryptoNewsApi
 ## Usage
 First make sure that you've recieved an API key by visiting [https://cryptocontrol.io/apis](https://cryptocontrol.io/apis). With the API key, you can write the following code.
 
-```java
-CryptoControlApi api = new CryptoControlApi("API_KEY");
+```swift
+import UIKit
+import CryptoNewsApi
 
-api.getTopNews(new CryptoControlApi.OnResponseHandler<List<Article>>() {
-    public void onSuccess(List<Article> body) {
-        for (Article article : body) {
-            System.out.println(article.getTitle());
+
+class ViewController: UIViewController {
+    override func viewDidLoad() {
+        super.viewDidLoad()
+
+        let api = CryptoControlApi(apiKey: "API_KEY_HERE")
+
+        api.getTopNews { (error, articles) in
+            if (error == CCErrors.invalidAPIKey) {
+                print("bad api key")
+            }
+
+            print(articles?.count)
+        }
+
+
+        api.getTopNewsByCategory { (error, categories) in
+            print(categories?.analysis.count)
         }
     }
+}
 
-
-    public void onFailure(Exception e) {
-        e.printStackTrace();
-    }
-});
 
 ```
 
