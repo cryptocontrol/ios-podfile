@@ -42,9 +42,9 @@ api.getTopNews(new CryptoControlApi.OnResponseHandler<List<Article>>() {
 - **getTopNewsByCoin(coin: String)** Get the top news articles for a specific coin from the CryptoControl API.
 - **getLatestNewsByCoin(coin: String)** Get the latest news articles for a specific coin.
 - **getTopNewsByCoinCategory(coin: String)** Get news articles grouped by category for a specific coin.
-- **getTopRedditPostsByCoin(coin: String)** Get top reddit posts for a particular coin
+<!-- - **getTopRedditPostsByCoin(coin: String)** Get top reddit posts for a particular coin
 - **getLatestRedditPostsByCoin(coin: String)** Get latest reddit posts for a particular coin
 - **getTopTweetsByCoin(coin: String)** Get top tweets for a particular coin
 - **getLatestTweetsByCoin(coin: String)** Get latest tweets for a particular coin
 - **getTopFeedByCoin(coin: String)** Get a combined feed (reddit/tweets/articles) for a particular coin (sorted by time)
-- **getLatestFeedByCoin(coin: String)** Get a combined feed (reddit/tweets/articles) for a particular coin (sorted by relevance)
+- **getLatestFeedByCoin(coin: String)** Get a combined feed (reddit/tweets/articles) for a particular coin (sorted by relevance) -->
