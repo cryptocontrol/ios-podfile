@@ -11,29 +11,19 @@ Pod::Spec.new do |s|
   s.version          = '0.1.0'
   s.summary          = 'Official iOS client for the CryptoControl API'
 
-# This description is used to generate tags and improve search results.
-#   * Think: What does it do? Why did you write it? What is the focus?
-#   * Try to keep it short, snappy and to the point.
-#   * Write the description between the DESC delimiters below.
-#   * Finally, don't worry about the indent, CocoaPods strips it!
-
   s.description      = <<-DESC
-TODO: Add long description of the pod here.
+Official iOS client for the CryptoControl.io API. The CryptoControl iOS API/client lets developers access rich formatted articles from crypto news sources from all around the world. This crypto news api is free to use.
                        DESC
 
-  s.homepage         = 'https://github.com/enamakel/CryptoNewsApi'
+  s.homepage         = 'https://github.com/cryptocontrol/ios-podfile'
   s.license          = { :type => 'MIT', :file => 'LICENSE' }
   s.author           = { 'enamakel' => 'enamakel@cryptocontrol.io' }
-  s.source           = { :git => 'https://github.com/enamakel/CryptoNewsApi.git', :tag => s.version.to_s }
+  s.source           = { :git => 'https://github.com/cryptocontrol/ios-podfile.git', :tag => s.version.to_s }
   s.social_media_url = 'https://twitter.com/cryptocontrolio'
 
   s.ios.deployment_target = '8.0'
 
   s.source_files = 'CryptoNewsApi/Classes/**/*'
-
-  # s.resource_bundles = {
-  #   'CryptoNewsApi' => ['CryptoNewsApi/Assets/*.png']
-  # }
 
   # s.public_header_files = 'Pod/Classes/**/*.h'
   # s.frameworks = 'UIKit', 'MapKit'
